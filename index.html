@@ -404,14 +404,14 @@
     }
 
     .deal-card {
-      width: 148px;
+      width: 122px;
       background: rgba(18, 24, 38, 0.85);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 7px;
+      padding: 5px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 3.5px;
       position: relative;
       flex-shrink: 0;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
@@ -429,22 +429,22 @@
     .deal-tag-pill {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       background: rgba(8, 12, 19, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-full);
-      padding: 2px 7px;
-      font-size: 9px;
+      padding: 1.5px 5.5px;
+      font-size: 8px;
       font-weight: 700;
       color: #cbd5e1;
       letter-spacing: 0.2px;
       width: fit-content;
-      margin-bottom: 1px;
+      margin-bottom: 0;
     }
 
     .deal-tag-dot {
-      width: 5px;
-      height: 5px;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
       flex-shrink: 0;
     }
@@ -466,8 +466,8 @@
 
     .deal-img-box {
       width: 100%;
-      height: 94px;
-      border-radius: 6px;
+      height: 72px;
+      border-radius: 5px;
       overflow: hidden;
       background: #0b0f17;
       position: relative;
@@ -485,17 +485,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
+      font-size: 22px;
       background: linear-gradient(135deg, #131b2e, #0d121c);
     }
 
     .deal-name {
-      font-size: 10.5px;
+      font-size: 9.5px;
       font-weight: 600;
       color: #e2e8f0;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      line-height: 1.15;
     }
 
     .deal-prices {
@@ -506,20 +507,20 @@
     }
 
     .deal-old {
-      font-size: 9px;
+      font-size: 8px;
       color: var(--text-dim);
       text-decoration: line-through;
     }
 
     .deal-current {
       font-family: 'Outfit', sans-serif;
-      font-size: 12.5px;
+      font-size: 11px;
       font-weight: 800;
       color: var(--wa-green);
     }
 
     .deal-cta {
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 700;
       color: var(--gold-light);
       text-align: right;
@@ -559,12 +560,12 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 6px 8px;
+      padding: 8px 10px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
@@ -574,13 +575,13 @@
     }
 
     .card-thumb-wrap {
-      width: 56px;
-      height: 56px;
-      border-radius: 9px;
+      width: 62px;
+      height: 62px;
+      border-radius: 10px;
       overflow: hidden;
       flex-shrink: 0;
       background: #111827;
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
     }
 
     .card-thumb {
@@ -594,7 +595,7 @@
       min-width: 0;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
     }
 
     .card-title-row {
@@ -607,7 +608,7 @@
 
     .card-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 13.5px;
+      font-size: 14.5px;
       font-weight: 800;
       color: #fff;
       line-height: 1.15;
@@ -617,10 +618,10 @@
     .vagas-box {
       display: inline-flex;
       align-items: center;
-      gap: 3px;
+      gap: 3.5px;
       background: rgba(239, 68, 68, 0.12);
       border: 1px solid var(--border-red);
-      padding: 1.5px 5px;
+      padding: 2px 6px;
       border-radius: var(--radius-full);
       font-size: 8.5px;
       font-weight: 800;
@@ -645,23 +646,23 @@
       animation: pulse 1.4s infinite;
     }
 
-    /* BOTAO CTA WHATSAPP PULSADO SUAVE & COMPACTO */
+    /* BOTAO CTA WHATSAPP PULSADO SUAVE & DESTACADO */
     .btn-join-wa {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
       width: 100%;
-      padding: 7px 10px;
+      padding: 8.5px 12px;
       background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
       color: #062b14;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 800;
       font-family: 'Outfit', sans-serif;
       text-decoration: none;
-      border-radius: 7px;
+      border-radius: 8px;
       transition: all 0.2s ease;
-      box-shadow: 0 3px 10px var(--wa-glow);
+      box-shadow: 0 3px 12px var(--wa-glow);
       border: none;
       cursor: pointer;
       letter-spacing: 0.1px;
@@ -675,8 +676,8 @@
     }
 
     .btn-join-wa svg {
-      width: 14px;
-      height: 14px;
+      width: 15px;
+      height: 15px;
       fill: currentColor;
       flex-shrink: 0;
     }
@@ -971,7 +972,7 @@
       <!-- BOX DE VAGAS COM ACESSO GRATUITO -->
       <div class="countdown-card">
         <div class="countdown-info">
-          <span class="countdown-sub">Novos membros em:</span>
+          <span class="countdown-sub">Acesso encerra em:</span>
         </div>
         <div class="timer-boxes">
           <div class="timer-box">
