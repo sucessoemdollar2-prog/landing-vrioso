@@ -34,7 +34,7 @@
   <style>
     :root {
       --bg-main: #07090e;
-      --bg-card: rgba(15, 19, 28, 0.9);
+      --bg-card: rgba(15, 19, 28, 0.92);
       --border-subtle: rgba(255, 255, 255, 0.08);
       --border-gold: rgba(245, 158, 11, 0.4);
       --border-green: rgba(37, 211, 102, 0.45);
@@ -53,7 +53,7 @@
 
       --radius-sm: 8px;
       --radius-md: 12px;
-      --radius-lg: 18px;
+      --radius-lg: 16px;
       --radius-full: 9999px;
     }
 
@@ -70,7 +70,7 @@
       color: var(--text-main);
       min-height: 100vh;
       overflow-x: hidden;
-      line-height: 1.4;
+      line-height: 1.35;
       background-image:
         radial-gradient(circle at 50% -10%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
         radial-gradient(circle at 10% 40%, rgba(37, 211, 102, 0.06) 0%, transparent 50%),
@@ -78,12 +78,12 @@
       background-attachment: fixed;
     }
 
-    /* Container com foco 100% Mobile (App Style) */
+    /* Container com foco 100% Mobile (App Style Clean) */
     .container {
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
-      padding: 16px 14px 60px;
+      padding: 12px 14px 40px;
       position: relative;
       z-index: 1;
     }
@@ -94,14 +94,14 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .mascot-avatar-wrap {
       position: relative;
-      width: 76px;
-      height: 76px;
-      margin-bottom: 10px;
+      width: 68px;
+      height: 68px;
+      margin-bottom: 8px;
     }
 
     .mascot-glow-ring {
@@ -132,15 +132,15 @@
       object-fit: cover;
       border: 2.5px solid #0d121c;
       background: #111827;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
     }
 
     .verified-badge {
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       background: linear-gradient(135deg, #10b981, #059669);
       border: 2px solid var(--bg-main);
       border-radius: 50%;
@@ -148,7 +148,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
     }
@@ -156,22 +156,22 @@
     .exclusive-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
+      gap: 7px;
+      padding: 5px 14px;
       border-radius: var(--radius-full);
-      background: rgba(245, 158, 11, 0.1);
+      background: rgba(245, 158, 11, 0.12);
       border: 1px solid var(--border-gold);
       color: var(--gold-light);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 8px;
     }
 
     .exclusive-pill .pulse-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--gold-light);
       box-shadow: 0 0 8px var(--gold-light);
@@ -194,12 +194,12 @@
 
     .main-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 24px;
+      font-size: clamp(15.5px, 4.4vw, 19.5px);
       font-weight: 800;
       line-height: 1.18;
       margin-bottom: 6px;
       letter-spacing: -0.3px;
-      text-wrap: balance;
+      white-space: nowrap;
     }
 
     .main-title span.gold {
@@ -209,126 +209,18 @@
       text-shadow: 0 0 25px var(--gold-glow);
     }
 
-    .hero-subtitle {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      margin: 0 auto 12px;
-      line-height: 1.35;
-      text-wrap: balance;
-    }
-
-    /* BOX VAGAS COM ACESSO GRATUITO (COMPACTO & IMPACTANTE) */
-    .countdown-card {
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(15, 23, 42, 0.95));
-      border: 1px solid var(--border-red);
-      border-radius: var(--radius-md);
-      padding: 8px 12px;
-      margin: 0 auto 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 6px 18px rgba(239, 68, 68, 0.15);
-      width: 100%;
-      justify-content: space-between;
-    }
-
-    .countdown-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      text-align: left;
-    }
-
-    .countdown-label {
-      font-size: 11px;
-      font-weight: 800;
-      color: #f87171;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .countdown-sub {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      line-height: 1.2;
-    }
-
-    .timer-boxes {
-      display: flex;
-      gap: 4px;
-      flex-shrink: 0;
-    }
-
-    .timer-box {
-      background: #090c12;
-      border: 1px solid rgba(239, 68, 68, 0.35);
-      border-radius: 6px;
-      padding: 4px 7px;
-      min-width: 36px;
-      text-align: center;
-      transition: all 0.25s ease;
-    }
-
-    .timer-box.urgent {
-      border-color: #ef4444;
-      background: rgba(239, 68, 68, 0.22);
-      box-shadow: 0 0 12px rgba(239, 68, 68, 0.45);
-      animation: heartbeatPulse 0.9s ease-in-out infinite;
-    }
-
-    @keyframes heartbeatPulse {
-      0% {
-        transform: scale(1);
-      }
-
-      18% {
-        transform: scale(1.09);
-      }
-
-      38% {
-        transform: scale(1.01);
-      }
-
-      58% {
-        transform: scale(1.07);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .timer-num {
-      font-family: 'Outfit', sans-serif;
-      font-size: 16px;
-      font-weight: 800;
-      color: #fff;
-      display: block;
-      line-height: 1;
-    }
-
-    .timer-unit {
-      font-size: 8.5px;
-      color: #f87171;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
     /* SETAS INDICADORAS SE MEXENDO (BOUNCING ARROWS) */
     .bouncing-arrows {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 6px;
-      margin: 4px 0 12px;
+      margin: 2px 0 8px;
       animation: arrowsBounce 1.25s ease-in-out infinite;
     }
 
     .bouncing-arrows .arrow-down {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 900;
       color: var(--gold-light);
       line-height: 1;
@@ -338,7 +230,7 @@
 
     .bouncing-arrows .arrow-down:nth-child(2) {
       color: var(--wa-green);
-      font-size: 24px;
+      font-size: 22px;
       text-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
     }
 
@@ -351,312 +243,133 @@
       }
 
       50% {
-        transform: translateY(7px);
+        transform: translateY(6px);
         opacity: 1;
       }
     }
 
-    /* ================= PADRÃO DE QUALIDADE: BLOCO ÚNICO UNIFICADO ================= */
-    .trust-master-box {
-      background: linear-gradient(180deg, rgba(16, 21, 33, 0.88) 0%, rgba(11, 15, 23, 0.95) 100%);
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-md);
-      padding: 12px 14px;
-      margin-bottom: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-    }
-
-    .trust-master-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .trust-master-header .shield-icon {
-      font-size: 16px;
-      color: var(--gold-light);
-      flex-shrink: 0;
-    }
-
-    .trust-master-header h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(11.5px, 3.4vw, 13.5px);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.2px;
-      white-space: nowrap;
-    }
-
-    .trust-items-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 10px;
-    }
-
-    .trust-entry {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .trust-entry-icon {
-      font-size: 15px;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .trust-entry-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-
-    .trust-entry-text strong {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 2px;
-    }
-
-    .trust-entry-text small {
-      font-size: 10px;
-      color: var(--text-muted);
-      line-height: 1.25;
-    }
-
-    /* ================= SELETOR DE GRUPOS ================= */
-    .section-headline {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .section-headline h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.2px;
-      margin-bottom: 2px;
-      text-wrap: balance;
-    }
-
-    .section-headline p {
-      font-size: 12px;
-      color: var(--text-dim);
-    }
-
-    /* ================= 3 CARDS DE GRUPOS ================= */
-    .groups-container {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-
-    .group-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .group-card:active {
-      transform: scale(0.99);
-      border-color: rgba(245, 158, 11, 0.5);
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 14px 8px;
-    }
-
-    .card-thumb-wrap {
-      width: 56px;
-      height: 56px;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      flex-shrink: 0;
-      background: #111827;
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .card-thumb {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .card-details {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .card-tag {
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--gold-light);
-      margin-bottom: 2px;
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .card-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 17px;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 3px;
-    }
-
-    .vagas-box {
+    /* BOX CRONÔMETRO REDUZIDO & CENTRALIZADO */
+    .countdown-card {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--border-red);
+      border-radius: var(--radius-full);
+      padding: 3.5px 14px;
+      margin: 0 auto 7px;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      background: rgba(239, 68, 68, 0.12);
-      border: 1px solid var(--border-red);
-      padding: 2px 7px;
-      border-radius: var(--radius-full);
-      font-size: 11px;
-      font-weight: 800;
-      color: #f87171;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 3px 12px rgba(239, 68, 68, 0.12);
+      width: fit-content;
+      max-width: 95%;
     }
 
-    .vagas-box.flash {
-      background: rgba(239, 68, 68, 0.35);
-      transform: scale(1.05);
-      border-color: #ef4444;
-    }
-
-    .pulse-red-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #ef4444;
-      box-shadow: 0 0 6px #ef4444;
-      animation: pulse 1.4s infinite;
-    }
-
-    .card-body {
-      padding: 2px 14px 14px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-desc {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      line-height: 1.4;
-      margin-bottom: 6px;
-    }
-
-    .card-obs {
-      font-size: 10px;
-      color: #94a3b8;
-      font-style: italic;
-      margin-bottom: 10px;
-      line-height: 1.35;
-      display: block;
-    }
-
-    .card-perks {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 12px;
-    }
-
-    .perk-badge {
-      font-size: 10.5px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 3px 7px;
-      border-radius: 6px;
-      color: #cbd5e1;
-      font-weight: 600;
-    }
-
-    /* BOTAO CTA WHATSAPP */
-    .btn-join-wa {
+    .countdown-info {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 12px 16px;
-      background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
-      color: #062b14;
-      font-size: 14.5px;
-      font-weight: 800;
-      font-family: 'Outfit', sans-serif;
-      text-decoration: none;
-      border-radius: var(--radius-md);
-      transition: all 0.2s ease;
-      box-shadow: 0 5px 15px var(--wa-glow);
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.2px;
     }
 
-    .btn-join-wa:active {
-      transform: scale(0.98);
-      color: #041f0e;
+    .countdown-sub {
+      font-size: 11px;
+      color: #cbd5e1;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
-    .btn-join-wa svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
+    .timer-boxes {
+      display: flex;
+      align-items: center;
+      gap: 3px;
       flex-shrink: 0;
     }
 
-    .group-card.vip .btn-join-wa {
-      background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-      color: #1a0f00;
-      box-shadow: 0 5px 15px var(--gold-glow);
+    .timer-separator {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: #ef4444;
+      line-height: 1;
+      animation: pulse 1s infinite;
     }
 
-    /* ================= SCROLL LATERAL ================= */
+    .timer-box {
+      background: #090c12;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      border-radius: 5px;
+      padding: 2.5px 6px;
+      min-width: 24px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .timer-box.urgent {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.22);
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.45);
+      animation: heartbeatPulse 0.9s ease-in-out infinite;
+    }
+
+    @keyframes heartbeatPulse {
+      0% {
+        transform: scale(1);
+      }
+
+      18% {
+        transform: scale(1.08);
+      }
+
+      38% {
+        transform: scale(1.01);
+      }
+
+      58% {
+        transform: scale(1.06);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .timer-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      display: block;
+      line-height: 1;
+    }
+
+    /* ================= SCROLL LATERAL (SUBIU PARA O TOPO!) ================= */
     .showcase-section {
-      margin-bottom: 30px;
+      margin-bottom: 8px;
       overflow: hidden;
+      background: rgba(13, 17, 26, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-md);
+      padding: 7px 6px;
     }
 
     .showcase-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
+      padding: 0 4px;
     }
 
     .showcase-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 800;
       color: #fff;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .showcase-sub {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-dim);
     }
 
@@ -664,16 +377,16 @@
       position: relative;
       width: 100%;
       overflow: hidden;
-      mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
     }
 
     .marquee-track {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       width: max-content;
-      animation: marqueeScroll 36s linear infinite;
-      padding: 4px 0;
+      animation: marqueeScroll 34s linear infinite;
+      padding: 2px 0;
     }
 
     .marquee-track:hover {
@@ -691,73 +404,70 @@
     }
 
     .deal-card {
-      width: 165px;
-      background: rgba(18, 24, 38, 0.78);
+      width: 148px;
+      background: rgba(18, 24, 38, 0.85);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 8px;
+      border-radius: var(--radius-sm);
+      padding: 7px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       position: relative;
       flex-shrink: 0;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      transition: transform 0.22s ease, border-color 0.22s ease;
       text-decoration: none;
       color: inherit;
     }
 
     .deal-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-2px);
       border-color: rgba(245, 158, 11, 0.5);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6), 0 0 12px rgba(245, 158, 11, 0.2);
     }
 
-    .deal-cta {
-      font-size: 9.5px;
-      font-weight: 700;
-      color: var(--gold-light);
-      text-align: right;
-      letter-spacing: 0.3px;
-      display: flex;
+    /* Tag limpa e legível que NÃO obstrui o produto */
+    .deal-tag-pill {
+      display: inline-flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 3px;
-      opacity: 0.9;
+      gap: 5px;
+      background: rgba(8, 12, 19, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-full);
+      padding: 2px 7px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #cbd5e1;
+      letter-spacing: 0.2px;
+      width: fit-content;
+      margin-bottom: 1px;
     }
 
-    .deal-badge-group {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 8.5px;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 2px 6px;
-      border-radius: 4px;
-      letter-spacing: 0.3px;
-      z-index: 2;
+    .deal-tag-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
-    .tag-g50 {
-      background: #059669;
-      color: #fff;
+    .deal-tag-pill.tag-g50 .deal-tag-dot {
+      background: #10b981;
+      box-shadow: 0 0 5px #10b981;
     }
 
-    .tag-g200 {
-      background: #2563eb;
-      color: #fff;
+    .deal-tag-pill.tag-g200 .deal-tag-dot {
+      background: #3b82f6;
+      box-shadow: 0 0 5px #3b82f6;
     }
 
-    .tag-gvip {
-      background: #d97706;
-      color: #000;
+    .deal-tag-pill.tag-gvip .deal-tag-dot {
+      background: #f59e0b;
+      box-shadow: 0 0 5px #f59e0b;
     }
 
     .deal-img-box {
       width: 100%;
-      height: 100px;
-      border-radius: var(--radius-sm);
+      height: 94px;
+      border-radius: 6px;
       overflow: hidden;
       background: #0b0f17;
       position: relative;
@@ -775,12 +485,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      font-size: 26px;
       background: linear-gradient(135deg, #131b2e, #0d121c);
     }
 
     .deal-name {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
       color: #e2e8f0;
       white-space: nowrap;
@@ -796,100 +506,236 @@
     }
 
     .deal-old {
-      font-size: 9.5px;
+      font-size: 9px;
       color: var(--text-dim);
       text-decoration: line-through;
     }
 
     .deal-current {
       font-family: 'Outfit', sans-serif;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
       color: var(--wa-green);
     }
 
-    /* ================= FAQ ACCORDION ================= */
-    .faq-section {
-      margin-bottom: 26px;
+    .deal-cta {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-align: right;
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2px;
+      opacity: 0.9;
     }
 
-    .faq-title {
+    /* ================= SELETOR DE GRUPOS ================= */
+    .section-headline {
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .section-headline h2 {
       font-family: 'Outfit', sans-serif;
-      font-size: 16px;
+      font-size: 14.5px;
       font-weight: 800;
       color: #fff;
-      text-align: center;
-      margin-bottom: 12px;
       letter-spacing: -0.2px;
     }
 
-    .faq-item {
+    /* ================= 3 CARDS DE GRUPOS (LADO A LADO: AVATAR NA ESQUERDA, CONTEÚDO NA DIREITA) ================= */
+    .groups-container {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+
+    .group-card {
       background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      margin-bottom: 8px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      padding: 11px 14px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: #f1f5f9;
+      padding: 6px 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
       align-items: center;
-      cursor: pointer;
-      user-select: none;
+      gap: 9px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .faq-question .arrow {
-      transition: transform 0.25s ease;
-      font-size: 10px;
-      color: var(--gold-light);
+    .group-card:active {
+      transform: scale(0.99);
+      border-color: rgba(245, 158, 11, 0.5);
     }
 
-    .faq-answer {
-      max-height: 0;
+    .card-thumb-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 9px;
       overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+      flex-shrink: 0;
+      background: #111827;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .card-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-content-col {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+      flex-wrap: nowrap;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .vagas-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid var(--border-red);
+      padding: 1.5px 5px;
+      border-radius: var(--radius-full);
+      font-size: 8.5px;
+      font-weight: 800;
+      color: #f87171;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .vagas-box.flash {
+      background: rgba(239, 68, 68, 0.35);
+      transform: scale(1.05);
+      border-color: #ef4444;
+    }
+
+    .pulse-red-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 5px #ef4444;
+      animation: pulse 1.4s infinite;
+    }
+
+    /* BOTAO CTA WHATSAPP PULSADO SUAVE & COMPACTO */
+    .btn-join-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 7px 10px;
+      background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
+      color: #062b14;
       font-size: 12px;
-      color: var(--text-muted);
-      padding: 0 14px;
-      line-height: 1.4;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      text-decoration: none;
+      border-radius: 7px;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 10px var(--wa-glow);
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.1px;
+      white-space: nowrap;
+      animation: softButtonPulse 2.2s ease-in-out infinite;
     }
 
-    .faq-item.active .faq-question .arrow {
-      transform: rotate(180deg);
+    .btn-join-wa:active {
+      transform: scale(0.97);
+      color: #041f0e;
     }
 
-    .faq-item.active .faq-answer {
-      max-height: 160px;
-      padding: 0 14px 12px;
+    .btn-join-wa svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
     }
 
-    /* ================= NOTIFICAÇÃO FLUTUANTE (ESTILO BANNER NATIVO NO TOPO) ================= */
+    .group-card.vip .btn-join-wa {
+      background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+      color: #1a0f00;
+      box-shadow: 0 3px 10px var(--gold-glow);
+      animation: softButtonPulseVip 2.2s ease-in-out infinite;
+    }
+
+    /* PULSADO SUAVE DO BOTÃO (Semelhante à bolinha pulsante) */
+    @keyframes softButtonPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 3px 10px var(--wa-glow);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.55);
+        opacity: 0.88;
+      }
+    }
+
+    @keyframes softButtonPulseVip {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 3px 10px var(--gold-glow);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 4px 16px rgba(245, 158, 11, 0.55);
+        opacity: 0.88;
+      }
+    }
+
+    /* ================= NOTIFICAÇÃO FLUTUANTE (POPUP SOCIAL NO TOPO) ================= */
     .proof-toast {
       position: fixed;
       top: 14px;
       left: 50%;
-      transform: translateX(-50%) translateY(-100px);
+      transform: translateX(-50%) translateY(-80px);
       background: rgba(12, 17, 28, 0.96);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1.5px solid rgba(37, 211, 102, 0.65);
       border-radius: var(--radius-md);
-      padding: 8px 14px;
+      padding: 7px 12px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85), 0 0 18px rgba(37, 211, 102, 0.35);
       z-index: 9999999;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
       width: max-content;
       max-width: 92%;
       pointer-events: none;
-      /* Não bloqueia cliques nos botões de forma alguma */
       opacity: 0;
     }
 
@@ -899,13 +745,13 @@
     }
 
     .toast-check-icon {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: rgba(37, 211, 102, 0.18);
       border: 1.5px solid var(--wa-green);
       color: var(--wa-green);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -917,11 +763,11 @@
     .toast-content {
       display: flex;
       flex-direction: column;
-      line-height: 1.18;
+      line-height: 1.15;
     }
 
     .toast-title {
-      font-size: 11px;
+      font-size: 10.5px;
       color: #f1f5f9;
       white-space: nowrap;
     }
@@ -932,77 +778,75 @@
     }
 
     .toast-sub {
-      font-size: 9.5px;
+      font-size: 9px;
       color: var(--text-muted);
       white-space: nowrap;
     }
 
-    /* ================= FOOTER COMPLIANCE META ================= */
+    /* ================= FOOTER COMPLIANCE META (MINÚSCULO & DISCRETO) ================= */
     footer.site-footer {
-      margin-top: 36px;
-      padding: 26px 14px 36px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 14px;
+      padding: 10px 10px 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
       text-align: center;
-      background: rgba(10, 14, 22, 0.65);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: var(--radius-lg);
+      background: rgba(10, 14, 22, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--radius-sm);
     }
 
     .footer-brand {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
-      margin-bottom: 16px;
+      gap: 2px;
+      margin-bottom: 6px;
     }
 
     .footer-brand-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 16px;
+      font-size: 11.5px;
       font-weight: 800;
-      color: #f1f5f9;
+      color: #94a3b8;
       letter-spacing: 0.2px;
     }
 
     .footer-brand-sub {
-      font-size: 11px;
-      color: var(--text-dim);
+      font-size: 8px;
+      color: #475569;
     }
 
     .footer-social-links {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
     }
 
     .footer-social-btn {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      padding: 8px 15px;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-full);
-      color: #cbd5e1;
-      font-size: 12px;
-      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      color: #64748b;
       text-decoration: none;
       transition: all 0.2s ease;
     }
 
     .footer-social-btn:hover {
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(255, 255, 255, 0.25);
-      color: #fff;
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #cbd5e1;
     }
 
     .footer-social-btn svg {
-      width: 14px;
-      height: 14px;
+      width: 11px;
+      height: 11px;
       fill: currentColor;
     }
 
@@ -1010,54 +854,52 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-      font-size: 12px;
+      gap: 8px;
+      margin-bottom: 5px;
+      font-size: 8px;
     }
 
     .footer-nav-links a {
-      color: var(--gold-light);
+      color: #64748b;
       text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.2s ease;
+      font-weight: 500;
     }
 
     .footer-nav-links a:hover {
+      color: var(--gold-light);
       text-decoration: underline;
     }
 
     .footer-nav-divider {
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.15);
     }
 
     .footer-disclaimer-meta {
-      font-size: 10px;
-      line-height: 1.55;
-      color: #64748b;
-      margin-bottom: 14px;
-      padding: 12px 14px;
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 7.5px;
+      line-height: 1.35;
+      color: #475569;
+      margin-bottom: 4px;
+      padding: 4px 6px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
       text-align: center;
     }
 
     .footer-copy {
-      font-size: 11px;
-      color: #475569;
+      font-size: 7.5px;
+      color: #334155;
     }
   </style>
 
   <!-- ================= META PIXEL & VERIFICAÇÃO DE DOMÍNIO ================= -->
-  <!-- Meta Tag de Verificação de Domínio (Meta Business Manager) -->
   <meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_DE_VERIFICACAO_AQUI" />
 
   <script>
     /*
       ========================================================================
       CONFIGURAÇÃO DO META PIXEL (FACEBOOK ADS)
-      Para ativar o Pixel, substitua 'SEU_PIXEL_ID' pelo ID numérico do seu Pixel:
-      Exemplo: window.META_PIXEL_ID = '123456789012345';
+      ID Oficial Ativo: 1582661643550308
       ========================================================================
     */
     window.META_PIXEL_ID = '1582661643550308';
@@ -1080,9 +922,7 @@
 
     function registrarCliqueGrupo(nomeGrupo, url, eventoCustom) {
       if (window.fbq && window.META_PIXEL_ID !== 'SEU_PIXEL_ID') {
-        // Dispara evento padrão de Lead
         fbq('track', 'Lead', { content_name: nomeGrupo });
-        // Dispara evento customizado segmentado (Lead_Grupo50, Lead_Grupo200, Lead_GrupoVIP)
         if (eventoCustom) {
           fbq('trackCustom', eventoCustom, { content_name: nomeGrupo });
         }
@@ -1108,7 +948,7 @@
         <div class="mascot-glow-ring"></div>
         <img src="midias/imagens/branding/Mascote do canal Vrio Short.webp" alt="Avatar Curadoria"
           class="mascot-avatar"
-          onerror="this.onerror=null; this.src='midias/imagens/branding/Mascote elegante com ofertas exclusivas.webp';">
+          onerror="this.onerror=null; this.src='midias/imagens/branding/Mascote do canal Vrio Short.jpg';">
         <div class="verified-badge" title="Grupo Oficial Verificado">✓</div>
       </div>
 
@@ -1118,14 +958,8 @@
       </div>
 
       <h1 class="main-title">
-        Entre nos Grupos de <br>
-        <span class="gold">Ofertas Antecipadas</span>
+        Entre nos Grupos de <span class="gold">Ofertas Antecipadas</span>
       </h1>
-
-      <p class="hero-subtitle">
-        A Black Friday se aproxima! Nossos grupos monitoram e antecipam quedas reais de preço e cupons relâmpago antes
-        de todo mundo.
-      </p>
 
       <!-- SETAS INDICATIVAS SE MEXENDO (BOUNCING ARROWS) -->
       <div class="bouncing-arrows" aria-hidden="true">
@@ -1137,96 +971,57 @@
       <!-- BOX DE VAGAS COM ACESSO GRATUITO -->
       <div class="countdown-card">
         <div class="countdown-info">
-          <span class="countdown-label">
-            ⚠️ Vagas com Acesso Gratuito
-          </span>
-          <span class="countdown-sub">A liberação de novos membros encerra em:</span>
+          <span class="countdown-sub">Novos membros em:</span>
         </div>
         <div class="timer-boxes">
           <div class="timer-box">
             <span class="timer-num" id="minutes">02</span>
-            <span class="timer-unit">Min</span>
           </div>
+          <span class="timer-separator">:</span>
           <div class="timer-box">
             <span class="timer-num" id="seconds">45</span>
-            <span class="timer-unit">Seg</span>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- ================= PADRÃO DE QUALIDADE (BLOCO ÚNICO UNIFICADO) ================= -->
-    <div class="trust-master-box">
-      <div class="trust-master-header">
-        <span class="shield-icon">🛡️</span>
-        <h3>Padrão de Qualidade dos Nossos Grupos</h3>
+    <!-- ================= SCROLL LATERAL (SUBIU PARA O TOPO!) ================= -->
+    <section class="showcase-section">
+      <div class="showcase-header">
+        <span class="showcase-title">
+          <span>🔥</span> Ofertas que rolaram nos grupos essa semana
+        </span>
       </div>
 
-      <div class="trust-items-grid">
-        <div class="trust-entry">
-          <span class="trust-entry-icon">🔇</span>
-          <div class="trust-entry-text">
-            <strong>Grupo Silencioso</strong>
-            <small>Sem conversas e sem barulho. Apenas ofertas.</small>
-          </div>
-        </div>
-
-        <div class="trust-entry">
-          <span class="trust-entry-icon">⏱️</span>
-          <div class="trust-entry-text">
-            <strong>Memória Limpa</strong>
-            <small>Fotos e mensagens somem em 7 dias.</small>
-          </div>
-        </div>
-
-        <div class="trust-entry">
-          <span class="trust-entry-icon">🔔</span>
-          <div class="trust-entry-text">
-            <strong>Poucas Mensagens</strong>
-            <small>Apenas alertas pontuais que valem a pena.</small>
-          </div>
-        </div>
-
-        <div class="trust-entry">
-          <span class="trust-entry-icon">🔒</span>
-          <div class="trust-entry-text">
-            <strong>Lojas Oficiais</strong>
-            <small>Links 100% seguros e verificados.</small>
-          </div>
+      <div class="marquee-wrapper">
+        <div class="marquee-track" id="deals-marquee-track">
+          <!-- Carregado via Javascript com as novas etiquetas limpas -->
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- ================= SELETOR DE GRUPOS ================= -->
     <div class="section-headline">
-      <h2>👇 Toque no seu grupo e entre agora:</h2>
-      <p>Você pode entrar em mais de um grupo se desejar.</p>
+      <h2>👇 Escolha seu grupo</h2>
     </div>
 
-    <!-- ================= OS 3 GRUPOS VIP (OS GRANDES TRUNFOS) ================= -->
+    <!-- ================= OS 3 GRUPOS VIP (COMPACTOS & DIRETOS) ================= -->
     <div class="groups-container">
 
       <!-- GRUPO 1: ATÉ 50 REAIS -->
       <div class="group-card" id="card-grupo-50">
-        <div class="card-top">
-          <div class="card-thumb-wrap">
-            <img src="midias/imagens/branding/EM até 50R$.webp" alt="Ofertas até 50 R$" class="card-thumb" loading="lazy">
-          </div>
-          <div class="card-details">
-            <span class="card-tag">🛍️ Compras Rápidas & Baratinhos</span>
+        <div class="card-thumb-wrap">
+          <img src="midias/imagens/branding/EM até 50R$.webp" alt="Ofertas até 50 R$" class="card-thumb" loading="lazy"
+            onerror="this.onerror=null; this.src='midias/imagens/branding/EM até 50R$.png';">
+        </div>
+        <div class="card-content-col">
+          <div class="card-title-row">
             <h3 class="card-title">Ofertas Até R$ 50</h3>
             <div class="vagas-box" id="vagas-box-1">
               <span class="pulse-red-dot"></span>
               <span>Restam apenas <strong id="vagas-1">49</strong> vagas</span>
             </div>
           </div>
-        </div>
-
-        <div class="card-body">
-          <span class="card-obs">
-            *Valor unitário de até R$ 50 (frete ou variações da loja podem alterar o total).
-          </span>
-
           <button class="btn-join-wa" id="btn-grupo-50"
             onclick="registrarCliqueGrupo('Grupo Até 50 Reais', 'https://chat.whatsapp.com/LaQtswcEmxBBIpj79wS1BP', 'Lead_Grupo50')">
             <svg viewBox="0 0 24 24">
@@ -1240,25 +1035,18 @@
 
       <!-- GRUPO 2: ATÉ 200 REAIS -->
       <div class="group-card" id="card-grupo-200">
-        <div class="card-top">
-          <div class="card-thumb-wrap">
-            <img src="midias/imagens/branding/EM até 200R$.webp" alt="Ofertas até 200 R$" class="card-thumb" loading="lazy">
-          </div>
-          <div class="card-details">
-            <span class="card-tag">📦 Compras & Ofertas até R$ 200</span>
+        <div class="card-thumb-wrap">
+          <img src="midias/imagens/branding/EM até 200R$.webp" alt="Ofertas até 200 R$" class="card-thumb" loading="lazy"
+            onerror="this.onerror=null; this.src='midias/imagens/branding/EM até 200R$.png';">
+        </div>
+        <div class="card-content-col">
+          <div class="card-title-row">
             <h3 class="card-title">Ofertas Até R$ 200</h3>
             <div class="vagas-box" id="vagas-box-2">
               <span class="pulse-red-dot"></span>
               <span>Restam apenas <strong id="vagas-2">38</strong> vagas</span>
             </div>
           </div>
-        </div>
-
-        <div class="card-body">
-          <span class="card-obs">
-            *Valor unitário de até R$ 200 (frete ou variações da loja podem alterar o total).
-          </span>
-
           <button class="btn-join-wa" id="btn-grupo-200"
             onclick="registrarCliqueGrupo('Grupo Até 200 Reais', 'https://chat.whatsapp.com/D8CWFi8OPl24kYoHne3haq', 'Lead_Grupo200')">
             <svg viewBox="0 0 24 24">
@@ -1272,26 +1060,19 @@
 
       <!-- GRUPO 3: OFERTAS EXCLUSIVAS (VIP) -->
       <div class="group-card vip" id="card-grupo-vip">
-        <div class="card-top">
-          <div class="card-thumb-wrap">
-            <img src="midias/imagens/branding/Mascote elegante com ofertas exclusivas.webp"
-              alt="Ofertas Exclusivas VIP" class="card-thumb" loading="lazy">
-          </div>
-          <div class="card-details">
-            <span class="card-tag">💎 Oportunidades & Grandes Descontos</span>
+        <div class="card-thumb-wrap">
+          <img src="midias/imagens/branding/Mascote elegante com ofertas exclusivas.webp"
+            alt="Ofertas Exclusivas VIP" class="card-thumb" loading="lazy"
+            onerror="this.onerror=null; this.src='midias/imagens/branding/Mascote elegante com ofertas exclusivas.png';">
+        </div>
+        <div class="card-content-col">
+          <div class="card-title-row">
             <h3 class="card-title">Ofertas Exclusivas</h3>
             <div class="vagas-box" id="vagas-box-3">
               <span class="pulse-red-dot"></span>
               <span>Restam apenas <strong id="vagas-3">21</strong> vagas</span>
             </div>
           </div>
-        </div>
-
-        <div class="card-body">
-          <span class="card-obs">
-            *Oportunidades de alto desconto e cupons relâmpago monitorados em tempo real.
-          </span>
-
           <button class="btn-join-wa" id="btn-grupo-vip"
             onclick="registrarCliqueGrupo('Grupo Ofertas Exclusivas VIP', 'https://chat.whatsapp.com/D3pit3TK3dPEWtkv0HeERD', 'Lead_GrupoVIP')">
             <svg viewBox="0 0 24 24">
@@ -1305,122 +1086,32 @@
 
     </div>
 
-    <!-- ================= SCROLL LATERAL ================= -->
-    <section class="showcase-section">
-      <div class="showcase-header">
-        <span class="showcase-title">
-          <span>🔥</span> O que já rolou nos grupos
-        </span>
-        <span class="showcase-sub">Exemplos reais recentes</span>
-      </div>
-
-      <div class="marquee-wrapper">
-        <div class="marquee-track" id="deals-marquee-track">
-          <!-- Dinâmico -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FAQ ================= -->
-    <section class="faq-section">
-      <h3 class="faq-title">Perguntas Frequentes</h3>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>É realmente 100% gratuito para entrar e ficar no grupo?</span>
-          <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-          Sim, é totalmente gratuito! Você nunca precisará pagar nenhuma mensalidade ou taxa para participar dos grupos
-          ou acessar os links e cupons.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Por que os grupos são separados por faixa de preço?</span>
-          <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-          Organizamos por faixa de valor para você receber exatamente o que cabe no seu bolso: se quer compras rápidas e
-          baratinhas do dia a dia, entra no de até R$ 50; se procura produtos mais elaborados, entra no de até R$ 200; e
-          para grandes descontos, no Exclusivo.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Posso entrar em mais de um grupo ao mesmo tempo?</span>
-          <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-          Com certeza! Você pode entrar nos dois ou nos três grupos simultaneamente para acompanhar todo tipo de
-          oportunidade.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Como faço para comprar um produto quando ver a mensagem?</span>
-          <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-          Basta tocar no link oficial anexado na mensagem da oferta dentro do WhatsApp. Você será direcionado
-          diretamente para a página segura do produto na loja oficial com o desconto já ativo.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>O grupo vai ficar enchendo a memória do meu celular?</span>
-          <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-          Não! Ativamos mensagens temporárias de 7 dias em todos os grupos. As fotos e postagens antigas se autoexcluem
-          sozinhas, mantendo seu aparelho sempre leve.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Vocês mandam spam ou mensagens no privado?</span>
-          <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-          Nunca. Nossos administradores jamais chamarão você no privado para pedir senhas, dinheiro ou dados pessoais.
-          Todas as ofertas são enviadas exclusivamente dentro do canal silencioso do grupo.
-        </div>
-      </div>
-    </section>
-
     <!-- ================= FOOTER DE CONFORMIDADE (META ADS & LGPD) ================= -->
     <footer class="site-footer">
       <div class="footer-brand">
         <span class="footer-brand-title">Vrio Só</span>
-        <span class="footer-brand-sub">Marca Independente de Curadoria de Ofertas & Achados</span>
+        <span class="footer-brand-sub">Curadoria Independente de Ofertas</span>
       </div>
 
       <div class="footer-social-links">
-        <a href="https://www.instagram.com/vrio.so/" target="_blank" rel="noopener noreferrer" class="footer-social-btn">
+        <a href="https://www.instagram.com/vrio.so/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Instagram" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          <span>Instagram @vrio.so</span>
         </a>
 
-        <a href="https://www.facebook.com/vrioso.oficial" target="_blank" rel="noopener noreferrer" class="footer-social-btn">
+        <a href="https://www.facebook.com/vrioso.oficial" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook">
           <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          <span>Facebook Oficial</span>
         </a>
       </div>
 
       <div class="footer-nav-links">
-        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="privacidade.html">Privacidade</a>
         <span class="footer-nav-divider">•</span>
-        <a href="termos.html">Termos de Uso</a>
+        <a href="termos.html">Termos</a>
       </div>
 
       <div class="footer-disclaimer-meta">
         <p>
-          <strong>Aviso Legal & Isenção de Vínculo:</strong> Este site não é afiliado e não faz parte do Facebook ou da Meta Platforms, Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca registrada da Meta Platforms, Inc.
+          Este site não tem vínculo nem é endossado pelo Facebook ou Meta Platforms, Inc. Facebook® é marca registrada de Meta Platforms, Inc.
         </p>
       </div>
 
@@ -1431,7 +1122,7 @@
 
   </div>
 
-  <!-- NOTIFICAÇÃO FLUTUANTE (COMPACTA, TRANSLÚCIDA & DISCRETA) -->
+  <!-- NOTIFICAÇÃO FLUTUANTE (POPUP SOCIAL) -->
   <div class="proof-toast" id="live-proof-toast">
     <div class="toast-check-icon">✓</div>
     <div class="toast-content">
@@ -1442,19 +1133,12 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
-    // ================= MOTOR DUAL DE ÁUDIO (HTML5 AUDIO + WEB AUDIO API FALLBACK) =================
+    // ================= MOTOR DUAL DE ÁUDIO =================
     let audioUnlocked = false;
     let audioCtx = null;
 
-    // ================= SELEÇÃO DE SONS (POP REAL) =================
-    // Opções disponíveis de POP para você testar (basta trocar o arquivo entre aspas na linha abaixo):
-    // • 'midias/pop_bolha.wav'   -> Pop clássico de bolha (estilo Telegram / iOS)
-    // • 'midias/pop_seco.wav'    -> Estalo seco e rápido de rolha
-    // • 'midias/pop_blip.wav'    -> Pop animado e moderno
-    // • 'midias/pop_gota.wav'    -> Pop suave de gota d'água
-    // • 'midias/pop_moderno.wav' -> Tuc-pop duplo sofisticado
     const chimeAudio = new Audio('midias/pop_blip.wav');
-    chimeAudio.volume = 0.6; // Ajuste o volume aqui (de 0.0 a 1.0)
+    chimeAudio.volume = 0.6;
     chimeAudio.preload = 'auto';
 
     const heartbeatAudio = new Audio('midias/heartbeat.wav');
@@ -1477,21 +1161,17 @@
 
     function unlockAudio() {
       if (audioUnlocked) return;
-
       const ctx = getAudioContext();
       if (ctx && ctx.state === 'suspended') {
         ctx.resume().catch(() => { });
       }
-
       try {
-        // Buffer de 1 amostra silenciosa apenas para desbloquear o hardware do celular sem emitir som algum
         const buffer = ctx.createBuffer(1, 1, 22050);
         const source = ctx.createBufferSource();
         source.buffer = buffer;
         source.connect(ctx.destination);
         source.start(0);
       } catch (e) { }
-
       audioUnlocked = true;
     }
 
@@ -1499,11 +1179,8 @@
       document.addEventListener(evt, unlockAudio, { passive: true, once: true });
     });
 
-    // Som 1: Notificação de entrada (Ding de alta fidelidade)
     function playPopupSound() {
-      // Se o usuário ainda não interagiu com a tela, não toca nada para não acumular som no primeiro toque
       if (!audioUnlocked) return;
-
       let html5Played = false;
       try {
         chimeAudio.currentTime = 0;
@@ -1536,7 +1213,6 @@
     function emitWebAudioChime(ctx) {
       try {
         const now = ctx.currentTime;
-        // Tom harmônico estilo sino (880Hz -> 1320Hz com sustentação clara de 0.65s)
         const osc1 = ctx.createOscillator();
         const gain1 = ctx.createGain();
         osc1.type = 'triangle';
@@ -1562,7 +1238,6 @@
       } catch (e) { }
     }
 
-    // Som 2: Heartbeat nos últimos 10s
     function playHeartbeatSound() {
       try {
         heartbeatAudio.currentTime = 0;
@@ -1590,7 +1265,6 @@
     function emitWebAudioHeartbeat(ctx) {
       try {
         const now = ctx.currentTime;
-        // Lub
         const osc1 = ctx.createOscillator();
         const gain1 = ctx.createGain();
         osc1.type = 'triangle';
@@ -1602,34 +1276,10 @@
         gain1.connect(ctx.destination);
         osc1.start(now);
         osc1.stop(now + 0.22);
-
-        // Dub
-        const osc2 = ctx.createOscillator();
-        const gain2 = ctx.createGain();
-        osc2.type = 'triangle';
-        osc2.frequency.setValueAtTime(150, now + 0.16);
-        osc2.frequency.exponentialRampToValueAtTime(75, now + 0.28);
-        gain2.gain.setValueAtTime(0.55, now + 0.16);
-        gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
-        osc2.connect(gain2);
-        gain2.connect(ctx.destination);
-        osc2.start(now + 0.16);
-        osc2.stop(now + 0.38);
       } catch (e) { }
     }
 
-
-    // 1. FAQ ACCORDION
-    document.querySelectorAll('.faq-question').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
-        const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(other => other.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
-      });
-    });
-
-    // 2. CONTADOR REGRESSIVO ALEATÓRIO COM BATIMENTO CARDÍACO NOS ÚLTIMOS 10s
+    // 1. CONTADOR REGRESSIVO
     let totalSeconds = Math.floor(Math.random() * 70) + 130;
     const minutesEl = document.getElementById('minutes');
     const secondsEl = document.getElementById('seconds');
@@ -1638,8 +1288,6 @@
     function updateTimer() {
       if (totalSeconds > 0) {
         totalSeconds--;
-
-        // Quando restar 10 segundos ou menos: batimento cardíaco sutil gerando ansiedade
         if (totalSeconds <= 10 && totalSeconds > 0) {
           playHeartbeatSound();
           timerBoxes.forEach(b => b.classList.add('urgent'));
@@ -1656,7 +1304,7 @@
     updateTimer();
     setInterval(updateTimer, 1000);
 
-    // 3. VAGAS RESTANTES ALEATÓRIAS E DECRESCENTES
+    // 2. VAGAS RESTANTES DECRESCENTES
     let vagas = {
       1: Math.floor(Math.random() * 12) + 42,
       2: Math.floor(Math.random() * 10) + 31,
@@ -1685,7 +1333,7 @@
       }
     }
 
-    // 4. NOTIFICAÇÕES REALISTAS (MICRO-TOAST) COM SOM SUTIL
+    // 3. NOTIFICAÇÕES REALISTAS (MICRO-TOAST)
     const ddds = ["11", "21", "31", "41", "51", "61", "71", "81", "85", "19", "27", "47", "62", "98"];
     function gerarNumeroAleatorio() {
       const ddd = ddds[Math.floor(Math.random() * ddds.length)];
@@ -1716,91 +1364,95 @@
       playPopupSound();
       decrementarVaga(grupoSorteado.id);
 
-      // Fica visível por 3.5 segundos
       setTimeout(() => {
         toast.classList.remove('show');
-
-        // Intervalo curto (apenas 2.2s a 3.2s de pausa) para gerar urgência contínua!
-        const pausa = Math.floor(Math.random() * 1000) + 2200;
+        const pausa = Math.floor(Math.random() * 1000) + 2400;
         setTimeout(dispararEntrada, pausa);
       }, 3500);
     }
 
-    // Primeiro pop-up aparece rápido: apenas 700ms após carregar a página
-    setTimeout(dispararEntrada, 700);
+    setTimeout(dispararEntrada, 800);
 
-    // 5. BANCO DE PRODUTOS REAIS (16 PRODUTOS GARIMPADOS COM FOTOS E LINKS OFICIAIS)
+    // 4. CATÁLOGO COM AS NOVAS ETIQUETAS LIMPAS
     const catalogoProdutos = [
       {
         nome: "Copo Térmico Inox 473ml c/ Tampa e Abridor",
         de: "R$ 50,99",
         por: "R$ 19,99",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/anuncios/copo_termico_anuncio.jpg",
+        img: "midias/imagens/anuncios/copo_termico_anuncio.webp",
+        fallback: "midias/imagens/anuncios/copo_termico_anuncio.jpg",
         link: "https://s.shopee.com.br/1LgnhXR4bR"
       },
       {
         nome: "Mini Climatizador & Ventilador Portátil USB",
         de: "R$ 86,00",
         por: "R$ 37,89",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/anuncios/mini_ventilador_anuncio.jpg",
+        img: "midias/imagens/anuncios/mini_ventilador_anuncio.webp",
+        fallback: "midias/imagens/anuncios/mini_ventilador_anuncio.jpg",
         link: "https://s.shopee.com.br/3qO8hOcmCI"
       },
       {
         nome: "Fita LED RGB 5M Colorida c/ Controle Remoto",
         de: "R$ 37,10",
         por: "R$ 29,77",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/anuncios/fita_led_anuncio.jpg",
+        img: "midias/imagens/anuncios/fita_led_anuncio.webp",
+        fallback: "midias/imagens/anuncios/fita_led_anuncio.jpg",
         link: "https://s.shopee.com.br/2LZKv0Uj9y"
       },
       {
         nome: "Kit 5 Sacos a Vácuo Roupas c/ Bomba Manual",
         de: "R$ 90,00",
         por: "R$ 37,00",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/anuncios/sacos_vacuo_anuncio.jpg",
+        img: "midias/imagens/anuncios/sacos_vacuo_anuncio.webp",
+        fallback: "midias/imagens/anuncios/sacos_vacuo_anuncio.jpg",
         link: "https://s.shopee.com.br/3qO8iPZFzs"
       },
       {
         nome: "Ventilador de Coluna 40cm Turbo 6 Pás",
         de: "R$ 199,00",
         por: "R$ 154,07",
-        grupo: "Até R$ 200",
+        grupo: "até R$ 200",
         tagClass: "tag-g200",
-        img: "../midias/imagens/anuncios/ventilador_coluna_anuncio.jpg",
+        img: "midias/imagens/anuncios/ventilador_coluna_anuncio.webp",
+        fallback: "midias/imagens/anuncios/ventilador_coluna_anuncio.jpg",
         link: "https://s.shopee.com.br/7Ky0tLI8qh"
       },
       {
         nome: "Headphone QCY H2 Bluetooth (Bateria 60H)",
         de: "R$ 249,00",
         por: "R$ 179,55",
-        grupo: "Até R$ 200",
+        grupo: "até R$ 200",
         tagClass: "tag-g200",
-        img: "../midias/imagens/anuncios/headphone_bluetooth_anuncio.jpg",
+        img: "midias/imagens/anuncios/headphone_bluetooth_anuncio.webp",
+        fallback: "midias/imagens/anuncios/headphone_bluetooth_anuncio.jpg",
         link: "https://s.shopee.com.br/2qVbXKtLR9"
       },
       {
         nome: "Pente Alisador Elétrico Cerâmica GOKOCO",
         de: "R$ 240,00",
         por: "R$ 174,80",
-        grupo: "Até R$ 200",
+        grupo: "até R$ 200",
         tagClass: "tag-g200",
-        img: "../midias/imagens/anuncios/escova_alisadora_anuncio.jpg",
+        img: "midias/imagens/anuncios/escova_alisadora_anuncio.webp",
+        fallback: "midias/imagens/anuncios/escova_alisadora_anuncio.jpg",
         link: "https://s.shopee.com.br/2Vsl8tPhfo"
       },
       {
         nome: "Parafusadeira Furadeira 12V c/ Maleta e Brocas",
         de: "R$ 189,00",
         por: "R$ 110,31",
-        grupo: "Até R$ 200",
+        grupo: "até R$ 200",
         tagClass: "tag-g200",
-        img: "../midias/imagens/anuncios/parafusadeira_furadeira_anuncio.jpg",
+        img: "midias/imagens/anuncios/parafusadeira_furadeira_anuncio.webp",
+        fallback: "midias/imagens/anuncios/parafusadeira_furadeira_anuncio.jpg",
         link: "https://s.shopee.com.br/906Et9bPzq"
       },
       {
@@ -1809,7 +1461,8 @@
         por: "R$ 1.379,91",
         grupo: "Exclusivo VIP",
         tagClass: "tag-gvip",
-        img: "../midias/imagens/anuncios/smart_tv_philco_anuncio.jpg",
+        img: "midias/imagens/anuncios/smart_tv_philco_anuncio.webp",
+        fallback: "midias/imagens/anuncios/smart_tv_philco_anuncio.jpg",
         link: "https://s.shopee.com.br/W7gm0mn63"
       },
       {
@@ -1818,52 +1471,58 @@
         por: "R$ 2.467,00",
         grupo: "Exclusivo VIP",
         tagClass: "tag-gvip",
-        img: "../midias/imagens/anuncios/ar_condicionado_lg_anuncio.jpg",
+        img: "midias/imagens/anuncios/ar_condicionado_lg_anuncio.webp",
+        fallback: "midias/imagens/anuncios/ar_condicionado_lg_anuncio.jpg",
         link: "https://s.shopee.com.br/3VlILeyXKm"
       },
       {
         nome: "Tábua Retrátil 3 em 1 Cesto Multiuso",
         de: "R$ 49,90",
         por: "R$ 19,90",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/produtos/oferta_tabua_retratil.jpg",
+        img: "midias/imagens/produtos/oferta_tabua_retratil.webp",
+        fallback: "midias/imagens/produtos/oferta_tabua_retratil.jpg",
         link: "https://s.shopee.com.br/6fiKCg5vol"
       },
       {
         nome: "Cortador & Fatiador Manual Turbo",
         de: "R$ 38,00",
         por: "R$ 14,50",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/produtos/oferta_fatiador_couve.jpg",
+        img: "midias/imagens/produtos/oferta_fatiador_couve.webp",
+        fallback: "midias/imagens/produtos/oferta_fatiador_couve.jpg",
         link: "https://s.shopee.com.br/8fTNGrJvPf"
       },
       {
         nome: "Bomba Elétrica USB p/ Galão d'Água",
         de: "R$ 55,00",
         por: "R$ 22,90",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/produtos/bomba_galao_agua.jpg",
+        img: "midias/imagens/produtos/bomba_galao_agua.webp",
+        fallback: "midias/imagens/produtos/bomba_galao_agua.jpg",
         link: "https://s.shopee.com.br/9fLuQ6fcoT"
       },
       {
         nome: "Kit Natal 4 Peças Sousplat + Guardanapos",
         de: "R$ 49,90",
         por: "R$ 29,90",
-        grupo: "Até R$ 50",
+        grupo: "até R$ 50",
         tagClass: "tag-g50",
-        img: "../midias/imagens/produtos/kit_sousplat_natal.jpg",
+        img: "midias/imagens/produtos/kit_sousplat_natal.webp",
+        fallback: "midias/imagens/produtos/kit_sousplat_natal.jpg",
         link: "https://s.shopee.com.br/5AtWfilQ0f"
       },
       {
         nome: "Árvore de Natal Decorada 180cm Kit Completo",
         de: "R$ 179,00",
         por: "R$ 166,65",
-        grupo: "Até R$ 200",
+        grupo: "até R$ 200",
         tagClass: "tag-g200",
-        img: "../midias/imagens/produtos/arvore_natal_decorada.jpg",
+        img: "midias/imagens/produtos/arvore_natal_decorada.webp",
+        fallback: "midias/imagens/produtos/arvore_natal_decorada.jpg",
         link: "https://s.shopee.com.br/8pmowVkC5i"
       },
       {
@@ -1872,7 +1531,8 @@
         por: "R$ 216,51",
         grupo: "Exclusivo VIP",
         tagClass: "tag-gvip",
-        img: "../midias/imagens/produtos/ventilador_wap_flow_turbo.jpg",
+        img: "midias/imagens/produtos/ventilador_wap_flow_turbo.webp",
+        fallback: "midias/imagens/produtos/ventilador_wap_flow_turbo.jpg",
         link: "https://s.shopee.com.br/9APfSQOaYi"
       }
     ];
@@ -1892,12 +1552,12 @@
 
     track.innerHTML = doubleDeals.map(item => `
       <div class="deal-card" ${item.link ? `onclick="window.open('${item.link}', '_blank')"` : ''} style="${item.link ? 'cursor:pointer;' : ''}">
-        <span class="deal-badge-group ${item.tagClass}">${item.grupo}</span>
+        <div class="deal-tag-pill ${item.tagClass}">
+          <span class="deal-tag-dot"></span>
+          <span>No grupo ${item.grupo}</span>
+        </div>
         <div class="deal-img-box">
-          ${item.img
-        ? `<img src="${item.img.replace('../', '').replace('.jpg', '.webp').replace('.png', '.webp')}" alt="${item.nome}" loading="lazy" onerror="this.onerror=null; if(!this.src.includes('../midias/')){this.src='../'+this.getAttribute('src');}">`
-        : `<div class="deal-placeholder">${item.emoji || '🎁'}</div>`
-      }
+          <img src="${item.img}" alt="${item.nome}" loading="lazy" onerror="this.onerror=null; this.src='${item.fallback}';">
         </div>
         <span class="deal-name" title="${item.nome}">${item.nome}</span>
         <div class="deal-prices">
