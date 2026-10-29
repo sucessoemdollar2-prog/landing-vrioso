@@ -454,9 +454,10 @@
       box-shadow: 0 0 5px #10b981;
     }
 
-    .deal-tag-pill.tag-g200 .deal-tag-dot {
-      background: #3b82f6;
-      box-shadow: 0 0 5px #3b82f6;
+    .deal-tag-pill.tag-g200 .deal-tag-dot,
+    .deal-tag-pill.tag-g300 .deal-tag-dot {
+      background: #06b6d4;
+      box-shadow: 0 0 6px #06b6d4;
     }
 
     .deal-tag-pill.tag-gvip .deal-tag-dot {
@@ -687,6 +688,73 @@
       color: #1a0f00;
       box-shadow: 0 3px 10px var(--gold-glow);
       animation: softButtonPulseVip 2.2s ease-in-out infinite;
+    }
+
+    /* CARD DE DESTAQUE: ATÉ R$ 300 (PULSO DIFERENCIADO & MAIOR DESTAQUE) */
+    .group-card.featured-300 {
+      border: 1.5px solid rgba(16, 185, 129, 0.65);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(13, 22, 35, 0.96) 100%);
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+      position: relative;
+    }
+
+    .badge-pop {
+      background: linear-gradient(135deg, #ef4444, #f59e0b);
+      color: #ffffff;
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+      margin-left: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.45);
+      animation: badgeBounce 2s infinite ease-in-out;
+      vertical-align: middle;
+    }
+
+    @keyframes badgeBounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .badge-vip-tag {
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      font-size: 8px;
+      font-weight: 800;
+      padding: 1.5px 5px;
+      border-radius: 20px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    /* BOTÃO PULSANTE ULTRA ENÉRGICO NO GRUPO 300 */
+    .group-card.featured-300 .btn-join-wa {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.45);
+      animation: energeticPulse300 1.7s ease-in-out infinite;
+    }
+
+    @keyframes energeticPulse300 {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.75), 0 4px 12px rgba(16, 185, 129, 0.35);
+      }
+      50% {
+        transform: scale(1.035);
+        box-shadow: 0 0 0 7px rgba(16, 185, 129, 0), 0 6px 20px rgba(16, 185, 129, 0.85);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0), 0 4px 12px rgba(16, 185, 129, 0.35);
+      }
     }
 
     /* PULSADO SUAVE DO BOTÃO (Semelhante à bolinha pulsante) */
@@ -1034,32 +1102,32 @@
         </div>
       </div>
 
-      <!-- GRUPO 2: ATÉ 200 REAIS -->
-      <div class="group-card" id="card-grupo-200">
+      <!-- GRUPO 2: ATÉ 300 REAIS (DESTAQUE ESPECIAL) -->
+      <div class="group-card featured-300" id="card-grupo-200">
         <div class="card-thumb-wrap">
-          <img src="midias/imagens/branding/EM até 200R$.webp" alt="Ofertas até 200 R$" class="card-thumb" loading="lazy"
-            onerror="this.onerror=null; this.src='midias/imagens/branding/EM até 200R$.png';">
+          <img src="midias/imagens/branding/EM até 300R$.webp" alt="Ofertas até 300 R$" class="card-thumb" loading="lazy"
+            onerror="this.onerror=null; this.src='midias/imagens/branding/EM até 300R$.png';">
         </div>
         <div class="card-content-col">
           <div class="card-title-row">
-            <h3 class="card-title">Ofertas Até R$ 200</h3>
+            <h3 class="card-title">Ofertas Até R$ 300 <span class="badge-pop">🔥 MAIS PEDIDO</span></h3>
             <div class="vagas-box" id="vagas-box-2">
               <span class="pulse-red-dot"></span>
               <span>Restam apenas <strong id="vagas-2">38</strong> vagas</span>
             </div>
           </div>
           <button class="btn-join-wa" id="btn-grupo-200"
-            onclick="registrarCliqueGrupo('Grupo Até 200 Reais', 'https://chat.whatsapp.com/D8CWFi8OPl24kYoHne3haq', 'Lead_Grupo200')">
+            onclick="registrarCliqueGrupo('Grupo Até 300 Reais', 'https://chat.whatsapp.com/D8CWFi8OPl24kYoHne3haq', 'Lead_Grupo300')">
             <svg viewBox="0 0 24 24">
               <path
                 d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.311.045-.698.085-2.09-.489-1.684-.693-2.766-2.414-2.85-2.526-.084-.112-.676-.902-.676-1.721 0-.819.429-1.223.582-1.389.153-.167.333-.209.444-.209.111 0 .222.002.319.006.104.004.243-.039.38.291.144.347.492 1.2.535 1.288.043.088.072.191.014.306-.058.115-.087.187-.174.289-.087.102-.183.228-.261.306-.087.087-.178.182-.077.355.101.173.449.741.964 1.2 0.663.591 1.221.774 1.394.861.173.087.275.072.377-.044.102-.116.435-.506.551-.68.116-.174.232-.145.391-.087s1.011.477 1.185.564.29.13.333.203c.043.073.043.421-.101.826z" />
             </svg>
-            <span>Entrar no Grupo Até R$ 200</span>
+            <span>Entrar no Grupo Até R$ 300</span>
           </button>
         </div>
       </div>
 
-      <!-- GRUPO 3: OFERTAS EXCLUSIVAS (VIP) -->
+      <!-- GRUPO 3: OFERTAS EXCLUSIVAS (VIP SEM LIMITE) -->
       <div class="group-card vip" id="card-grupo-vip">
         <div class="card-thumb-wrap">
           <img src="midias/imagens/branding/Mascote elegante com ofertas exclusivas.webp"
@@ -1068,7 +1136,7 @@
         </div>
         <div class="card-content-col">
           <div class="card-title-row">
-            <h3 class="card-title">Ofertas Exclusivas</h3>
+            <h3 class="card-title">Ofertas VIP <span class="badge-vip-tag">SEM LIMITE</span></h3>
             <div class="vagas-box" id="vagas-box-3">
               <span class="pulse-red-dot"></span>
               <span>Restam apenas <strong id="vagas-3">21</strong> vagas</span>
@@ -1080,7 +1148,7 @@
               <path
                 d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.311.045-.698.085-2.09-.489-1.684-.693-2.766-2.414-2.85-2.526-.084-.112-.676-.902-.676-1.721 0-.819.429-1.223.582-1.389.153-.167.333-.209.444-.209.111 0 .222.002.319.006.104.004.243-.039.38.291.144.347.492 1.2.535 1.288.043.088.072.191.014.306-.058.115-.087.187-.174.289-.087.102-.183.228-.261.306-.087.087-.178.182-.077.355.101.173.449.741.964 1.2 0.663.591 1.221.774 1.394.861.173.087.275.072.377-.044.102-.116.435-.506.551-.68.116-.174.232-.145.391-.087s1.011.477 1.185.564.29.13.333.203c.043.073.043.421-.101.826z" />
             </svg>
-            <span>Entrar no Grupo VIP Exclusivo</span>
+            <span>Entrar no VIP (Sem Limite)</span>
           </button>
         </div>
       </div>
@@ -1344,8 +1412,8 @@
 
     const gruposInfo = [
       { id: 1, nome: "Grupo Até R$ 50" },
-      { id: 2, nome: "Grupo Até R$ 200" },
-      { id: 3, nome: "Grupo VIP Exclusivo" }
+      { id: 2, nome: "Grupo Até R$ 300" },
+      { id: 3, nome: "Grupo VIP (Sem Limite)" }
     ];
 
     const toast = document.getElementById('live-proof-toast');
@@ -1420,8 +1488,8 @@
         nome: "Ventilador de Coluna 40cm Turbo 6 Pás",
         de: "R$ 199,00",
         por: "R$ 154,07",
-        grupo: "até R$ 200",
-        tagClass: "tag-g200",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/anuncios/ventilador_coluna_anuncio.webp",
         fallback: "midias/imagens/anuncios/ventilador_coluna_anuncio.jpg",
         link: "https://s.shopee.com.br/7Ky0tLI8qh"
@@ -1430,8 +1498,8 @@
         nome: "Headphone QCY H2 Bluetooth (Bateria 60H)",
         de: "R$ 249,00",
         por: "R$ 179,55",
-        grupo: "até R$ 200",
-        tagClass: "tag-g200",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/anuncios/headphone_bluetooth_anuncio.webp",
         fallback: "midias/imagens/anuncios/headphone_bluetooth_anuncio.jpg",
         link: "https://s.shopee.com.br/2qVbXKtLR9"
@@ -1440,8 +1508,8 @@
         nome: "Pente Alisador Elétrico Cerâmica GOKOCO",
         de: "R$ 240,00",
         por: "R$ 174,80",
-        grupo: "até R$ 200",
-        tagClass: "tag-g200",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/anuncios/escova_alisadora_anuncio.webp",
         fallback: "midias/imagens/anuncios/escova_alisadora_anuncio.jpg",
         link: "https://s.shopee.com.br/2Vsl8tPhfo"
@@ -1450,8 +1518,8 @@
         nome: "Parafusadeira Furadeira 12V c/ Maleta e Brocas",
         de: "R$ 189,00",
         por: "R$ 110,31",
-        grupo: "até R$ 200",
-        tagClass: "tag-g200",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/anuncios/parafusadeira_furadeira_anuncio.webp",
         fallback: "midias/imagens/anuncios/parafusadeira_furadeira_anuncio.jpg",
         link: "https://s.shopee.com.br/906Et9bPzq"
@@ -1460,7 +1528,7 @@
         nome: "Smart TV 43\" Philco QLED HDR10 Roku TV 4K",
         de: "R$ 1.599,90",
         por: "R$ 1.379,91",
-        grupo: "Exclusivo VIP",
+        grupo: "VIP (Sem Limite)",
         tagClass: "tag-gvip",
         img: "midias/imagens/anuncios/smart_tv_philco_anuncio.webp",
         fallback: "midias/imagens/anuncios/smart_tv_philco_anuncio.jpg",
@@ -1470,7 +1538,7 @@
         nome: "Ar Condicionado LG Smart Inverter 12.000 BTUs",
         de: "R$ 2.781,52",
         por: "R$ 2.467,00",
-        grupo: "Exclusivo VIP",
+        grupo: "VIP (Sem Limite)",
         tagClass: "tag-gvip",
         img: "midias/imagens/anuncios/ar_condicionado_lg_anuncio.webp",
         fallback: "midias/imagens/anuncios/ar_condicionado_lg_anuncio.jpg",
@@ -1520,8 +1588,8 @@
         nome: "Árvore de Natal Decorada 180cm Kit Completo",
         de: "R$ 179,00",
         por: "R$ 166,65",
-        grupo: "até R$ 200",
-        tagClass: "tag-g200",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/produtos/arvore_natal_decorada.webp",
         fallback: "midias/imagens/produtos/arvore_natal_decorada.jpg",
         link: "https://s.shopee.com.br/8pmowVkC5i"
@@ -1530,8 +1598,8 @@
         nome: "Ventilador 50cm Wap Flow Turbo 180W 8 Pás",
         de: "R$ 239,90",
         por: "R$ 216,51",
-        grupo: "Exclusivo VIP",
-        tagClass: "tag-gvip",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/produtos/ventilador_wap_flow_turbo.webp",
         fallback: "midias/imagens/produtos/ventilador_wap_flow_turbo.jpg",
         link: "https://s.shopee.com.br/9APfSQOaYi"
@@ -1540,8 +1608,8 @@
         nome: "Guarda-Sol Quadrado Gigante — 3m",
         de: "R$ 289,00",
         por: "R$ 260,83",
-        grupo: "Exclusivo VIP",
-        tagClass: "tag-gvip",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/produtos/guarda_sol_gigante.webp",
         fallback: "midias/imagens/produtos/guarda_sol_gigante.jpg",
         link: "https://s.shopee.com.br/AUv5yx8j8d"
@@ -1550,8 +1618,8 @@
         nome: "Air Fryer Midea Widemax 5,5L — 1900W",
         de: "R$ 294,99",
         por: "R$ 266,23",
-        grupo: "Exclusivo VIP",
-        tagClass: "tag-gvip",
+        grupo: "até R$ 300",
+        tagClass: "tag-g300",
         img: "midias/imagens/produtos/air_fryer_midea_5l.webp",
         fallback: "midias/imagens/produtos/air_fryer_midea_5l.jpg",
         link: "https://s.shopee.com.br/3VlLczaRgK"
