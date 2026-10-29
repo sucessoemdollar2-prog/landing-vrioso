@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Grupos VIP de Ofertas | Acesso Gratuito</title>
+  <title>Ofertas até R$ 300 | Vrio Só</title>
 
   <meta name="description"
     content="Garimpo diário de ofertas selecionadas, cupons relâmpago e quedas de preço. Entre no seu grupo gratuito no WhatsApp.">
@@ -196,12 +196,12 @@
 
     .main-title {
       font-family: 'Outfit', sans-serif;
-      font-size: clamp(15.5px, 4.4vw, 19.5px);
+      font-size: clamp(16px, 4.6vw, 21px);
       font-weight: 800;
-      line-height: 1.18;
-      margin-bottom: 6px;
+      line-height: 1.22;
+      margin-bottom: 3px;
       letter-spacing: -0.3px;
-      white-space: nowrap;
+      text-align: center;
     }
 
     .main-title span.gold {
@@ -209,6 +209,15 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 25px var(--gold-glow);
+    }
+
+    .main-subtitle {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 6px;
+      text-align: center;
+      letter-spacing: 0.1px;
     }
 
     /* SETAS INDICADORAS SE MEXENDO (BOUNCING ARROWS) */
@@ -673,20 +682,23 @@
       border: 1.5px solid rgba(255, 255, 255, 0.22);
     }
 
-    #card-grupo-50 .sec-card-avatar-wrap {
+    #card-grupo-50 .sec-card-avatar-wrap,
+    #card-grupo-grandes .sec-card-avatar-wrap {
       border: 1.8px solid #10b981;
       box-shadow: 0 0 10px rgba(16, 185, 129, 0.45);
-    }
-
-    #card-grupo-grandes .sec-card-avatar-wrap {
-      border: 1.8px solid #f59e0b;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.45);
     }
 
     .sec-card-avatar {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .sec-card-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
     }
 
     .sec-card-title {
@@ -696,6 +708,18 @@
       color: #ffffff;
       line-height: 1.15;
       white-space: nowrap;
+    }
+
+    .sec-card-desc {
+      font-size: 8px;
+      color: #94a3b8;
+      font-weight: 500;
+      line-height: 1.2;
+      display: block;
+      margin-top: 1.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .btn-sec-wa {
@@ -736,72 +760,69 @@
       flex-shrink: 0;
     }
 
-    /* ================= NOTIFICAÇÃO FLUTUANTE (POPUP SOCIAL NO TOPO) ================= */
-    .proof-toast {
+    /* ================= AVISO DISCRETO DE COOKIES & META PIXEL ================= */
+    .cookie-banner {
       position: fixed;
-      top: 14px;
-      left: 50%;
-      transform: translateX(-50%) translateY(-80px);
-      background: rgba(12, 17, 28, 0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1.5px solid rgba(37, 211, 102, 0.65);
-      border-radius: var(--radius-md);
-      padding: 7px 12px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 15, 24, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 14px;
+      z-index: 99999;
+      display: none;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.6);
+      animation: cookieSlideUp 0.3s ease-out;
+    }
+
+    .cookie-inner {
+      max-width: 440px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 9px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85), 0 0 18px rgba(37, 211, 102, 0.35);
-      z-index: 9999999;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-      width: max-content;
-      max-width: 92%;
-      pointer-events: none;
-      opacity: 0;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    .proof-toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
-
-    .toast-check-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: rgba(37, 211, 102, 0.18);
-      border: 1.5px solid var(--wa-green);
-      color: var(--wa-green);
+    .cookie-text {
       font-size: 10px;
+      color: #94a3b8;
+      line-height: 1.35;
+    }
+
+    .cookie-text a {
+      color: #25d366;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .cookie-btn {
+      background: #10b981;
+      color: #041f0e;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 11px;
       font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
       flex-shrink: 0;
-      box-shadow: 0 0 6px rgba(37, 211, 102, 0.25);
+      transition: background 0.2s ease, transform 0.15s ease;
     }
 
-    .toast-content {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
+    .cookie-btn:active {
+      transform: scale(0.96);
     }
 
-    .toast-title {
-      font-size: 10.5px;
-      color: #f1f5f9;
-      white-space: nowrap;
-    }
-
-    .toast-title strong {
-      color: var(--wa-green);
-      font-weight: 700;
-    }
-
-    .toast-sub {
-      font-size: 9px;
-      color: var(--text-muted);
-      white-space: nowrap;
+    @keyframes cookieSlideUp {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
     }
 
     /* ================= FOOTER COMPLIANCE META (MINÚSCULO & DISCRETO) ================= */
@@ -875,35 +896,39 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
-      font-size: 8px;
+      gap: 12px;
+      margin-bottom: 8px;
     }
 
     .footer-nav-links a {
-      color: #64748b;
-      text-decoration: none;
-      font-weight: 500;
+      color: #94a3b8;
+      text-decoration: underline;
+      font-weight: 600;
+      font-size: 11.5px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
     }
 
     .footer-nav-links a:hover {
       color: var(--gold-light);
-      text-decoration: underline;
+      background: rgba(255, 255, 255, 0.06);
     }
 
     .footer-nav-divider {
-      color: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 11px;
     }
 
     .footer-disclaimer-meta {
-      font-size: 7.5px;
-      line-height: 1.35;
-      color: #475569;
-      margin-bottom: 4px;
-      padding: 4px 6px;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 3px;
-      border: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 8.5px;
+      line-height: 1.4;
+      color: #64748b;
+      margin-bottom: 6px;
+      padding: 6px 8px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
       text-align: center;
     }
 
@@ -973,14 +998,15 @@
         <div class="verified-badge" title="Grupo Oficial Verificado">✓</div>
       </div>
 
-      <div class="exclusive-pill">
+      <div class="exclusive-pill" id="dynamic-event-pill">
         <span class="pulse-dot"></span>
-        A Black Friday está chegando!
+        <span id="pill-text">A BLACK FRIDAY ESTÁ CHEGANDO!</span>
       </div>
 
       <h1 class="main-title">
-        Entre nos Grupos de <span class="gold">Ofertas Antecipadas</span>
+        Ofertas selecionadas <span class="gold">até R$ 300</span> pro fim de ano
       </h1>
+      <p class="main-subtitle">Preço conferido no histórico. Sem lista gigante.</p>
 
       <!-- SETAS INDICATIVAS SE MEXENDO (BOUNCING ARROWS) -->
       <div class="bouncing-arrows" aria-hidden="true">
@@ -989,34 +1015,34 @@
         <span class="arrow-down">↓</span>
       </div>
 
-      <!-- CRONÔMETRO REAL BLACK FRIDAY -->
-      <div class="bf-countdown-card">
-        <div class="bf-countdown-title">Black Friday em:</div>
+      <!-- CRONÔMETRO MULTI-DATAS REAL -->
+      <div class="bf-countdown-card" id="bf-countdown-card">
+        <div class="bf-countdown-title" id="bf-countdown-title">Black Friday em:</div>
         <div class="bf-timer-grid">
           <div class="bf-timer-unit">
             <div class="bf-timer-box">
-              <span class="bf-timer-num" id="bf-days">29</span>
+              <span class="bf-timer-num" id="bf-days">00</span>
             </div>
             <span class="bf-timer-label">dias</span>
           </div>
           <span class="bf-timer-colon">:</span>
           <div class="bf-timer-unit">
             <div class="bf-timer-box">
-              <span class="bf-timer-num" id="bf-hours">21</span>
+              <span class="bf-timer-num" id="bf-hours">00</span>
             </div>
             <span class="bf-timer-label">horas</span>
           </div>
           <span class="bf-timer-colon">:</span>
           <div class="bf-timer-unit">
             <div class="bf-timer-box">
-              <span class="bf-timer-num" id="bf-minutes">45</span>
+              <span class="bf-timer-num" id="bf-minutes">00</span>
             </div>
             <span class="bf-timer-label">minutos</span>
           </div>
           <span class="bf-timer-colon">:</span>
           <div class="bf-timer-unit">
             <div class="bf-timer-box">
-              <span class="bf-timer-num" id="bf-seconds">12</span>
+              <span class="bf-timer-num" id="bf-seconds">00</span>
             </div>
             <span class="bf-timer-label">segundos</span>
           </div>
@@ -1054,7 +1080,9 @@
             <img src="midias/imagens/branding/EM até 50R$.webp" alt="Até R$ 50" class="sec-card-avatar" loading="lazy"
               onerror="this.onerror=null; this.src='midias/imagens/branding/EM até 50R$.png';">
           </div>
-          <h3 class="sec-card-title">Até R$ 50</h3>
+          <div class="sec-card-text">
+            <h3 class="sec-card-title">Até R$ 50</h3>
+          </div>
         </div>
         <button class="btn-sec-wa" id="btn-grupo-50"
           onclick="registrarCliqueGrupo('Grupo Até 50 Reais', 'https://chat.whatsapp.com/LaQtswcEmxBBIpj79wS1BP', 'Lead_Grupo50')">
@@ -1072,7 +1100,10 @@
             <img src="midias/imagens/branding/Grandes Ofertas.webp" alt="Grandes Ofertas" class="sec-card-avatar" loading="lazy"
               onerror="this.onerror=null; this.src='midias/imagens/branding/Grandes Ofertas.png';">
           </div>
-          <h3 class="sec-card-title">Grandes Ofertas</h3>
+          <div class="sec-card-text">
+            <h3 class="sec-card-title">Grandes Ofertas</h3>
+            <span class="sec-card-desc">TVs, eletros e grandes marcas</span>
+          </div>
         </div>
         <button class="btn-sec-wa" id="btn-grupo-vip"
           onclick="registrarCliqueGrupo('Grupo Grandes Ofertas', 'https://chat.whatsapp.com/D3pit3TK3dPEWtkv0HeERD', 'Lead_GrupoVIP')">
@@ -1123,9 +1154,7 @@
       </div>
 
       <div class="footer-disclaimer-meta">
-        <p>
-          Este site não tem vínculo nem é endossado pelo Facebook ou Meta Platforms, Inc. Facebook® é marca registrada de Meta Platforms, Inc.
-        </p>
+        <p>Este site não tem vínculo nem é endossado pelo Facebook ou Meta Platforms.</p>
       </div>
 
       <p class="footer-copy">
@@ -1135,12 +1164,13 @@
 
   </div>
 
-  <!-- NOTIFICAÇÃO FLUTUANTE (POPUP SOCIAL) -->
-  <div class="proof-toast" id="live-proof-toast">
-    <div class="toast-check-icon">✓</div>
-    <div class="toast-content">
-      <div class="toast-title" id="toast-title"><strong>(11) 98754-****</strong> entrou no grupo</div>
-      <div class="toast-sub" id="toast-sub">Grupo Até R$ 50 • há poucos instantes</div>
+  <!-- AVISO DISCRETO DE COOKIES & META PIXEL -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-inner">
+      <span class="cookie-text">
+        Utilizamos cookies e tecnologias (como o Pixel da Meta) para medir cliques e melhorar sua experiência. Ao navegar, você concorda. <a href="privacidade.html">Política de Privacidade</a>.
+      </span>
+      <button class="cookie-btn" onclick="aceitarCookies()">Entendi</button>
     </div>
   </div>
 
@@ -1292,85 +1322,91 @@
       } catch (e) { }
     }
 
-    // 1. CRONÔMETRO BLACK FRIDAY (DURÁVEL E REAL)
+    // ================= 1. CONTADOR MULTI-DATAS REAL E INTELIGENTE =================
+    const eventosFimDeAno = [
+      {
+        nome: "Black Friday",
+        pillTexto: "A BLACK FRIDAY ESTÁ CHEGANDO!",
+        dataIso: "2026-11-27T00:00:00-03:00"
+      },
+      {
+        nome: "Cyber Monday",
+        pillTexto: "A CYBER MONDAY ESTÁ CHEGANDO!",
+        dataIso: "2026-11-30T00:00:00-03:00"
+      },
+      {
+        nome: "Natal",
+        pillTexto: "O NATAL ESTÁ CHEGANDO!",
+        dataIso: "2026-12-25T00:00:00-03:00"
+      },
+      {
+        nome: "Ano Novo",
+        pillTexto: "O ANO NOVO ESTÁ CHEGANDO!",
+        dataIso: "2027-01-01T00:00:00-03:00"
+      }
+    ];
+
     const elBfDays = document.getElementById('bf-days');
     const elBfHours = document.getElementById('bf-hours');
     const elBfMinutes = document.getElementById('bf-minutes');
     const elBfSeconds = document.getElementById('bf-seconds');
+    const elPillText = document.getElementById('pill-text');
+    const elCountdownTitle = document.getElementById('bf-countdown-title');
+    const elCountdownCard = document.getElementById('bf-countdown-card');
 
-    function updateBlackFridayCountdown() {
-      if (!elBfDays || !elBfHours || !elBfMinutes || !elBfSeconds) return;
+    function updateMultiEventCountdown() {
       const now = new Date();
-      // Black Friday 2026 (27 de Novembro de 2026)
-      let targetYear = now.getFullYear();
-      let targetDate = new Date(targetYear, 10, 27, 0, 0, 0); // Mês 10 = Novembro
-      if (now > targetDate) {
-        targetDate = new Date(targetYear + 1, 10, 27, 0, 0, 0);
+      let eventoAtivo = null;
+      let diffMs = 0;
+
+      for (const ev of eventosFimDeAno) {
+        const d = new Date(ev.dataIso);
+        const diff = d - now;
+        if (diff > 0) {
+          eventoAtivo = ev;
+          diffMs = diff;
+          break;
+        }
       }
-      
-      const diffMs = targetDate - now;
-      if (diffMs <= 0) {
-        elBfDays.textContent = "00";
-        elBfHours.textContent = "00";
-        elBfMinutes.textContent = "00";
-        elBfSeconds.textContent = "00";
+
+      if (!eventoAtivo) {
+        // Se passou a última data, oculta o bloco do contador suavemente
+        if (elCountdownCard) elCountdownCard.style.display = 'none';
         return;
       }
+
+      if (elPillText) elPillText.textContent = eventoAtivo.pillTexto;
+      if (elCountdownTitle) elCountdownTitle.textContent = `${eventoAtivo.nome} em:`;
 
       const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diffMs / (1000 * 60)) % 60);
       const seconds = Math.floor((diffMs / 1000) % 60);
 
-      elBfDays.textContent = String(days).padStart(2, '0');
-      elBfHours.textContent = String(hours).padStart(2, '0');
-      elBfMinutes.textContent = String(minutes).padStart(2, '0');
-      elBfSeconds.textContent = String(seconds).padStart(2, '0');
+      if (elBfDays) elBfDays.textContent = String(days).padStart(2, '0');
+      if (elBfHours) elBfHours.textContent = String(hours).padStart(2, '0');
+      if (elBfMinutes) elBfMinutes.textContent = String(minutes).padStart(2, '0');
+      if (elBfSeconds) elBfSeconds.textContent = String(seconds).padStart(2, '0');
     }
 
-    updateBlackFridayCountdown();
-    setInterval(updateBlackFridayCountdown, 1000);
+    updateMultiEventCountdown();
+    setInterval(updateMultiEventCountdown, 1000);
 
-    // 2. NOTIFICAÇÕES REALISTAS (MICRO-TOAST)
-    const ddds = ["11", "21", "31", "41", "51", "61", "71", "81", "85", "19", "27", "47", "62", "98"];
-    function gerarNumeroAleatorio() {
-      const ddd = ddds[Math.floor(Math.random() * ddds.length)];
-      const prefixo = "9" + Math.floor(Math.random() * 9000 + 1000);
-      return `(${ddd}) ${prefixo}-****`;
+    // ================= 2. CONTROLE DE CONSENTIMENTO (COOKIES / PIXEL) =================
+    function checarCookies() {
+      if (!localStorage.getItem('vrioso_cookie_consent')) {
+        const b = document.getElementById('cookie-banner');
+        if (b) b.style.display = 'block';
+      }
     }
 
-    const gruposInfo = [
-      { id: 1, nome: "Grupo Até R$ 50" },
-      { id: 2, nome: "Grupo Até R$ 300" },
-      { id: 3, nome: "Grupo Grandes Ofertas" }
-    ];
-
-    const toast = document.getElementById('live-proof-toast');
-    const toastTitle = document.getElementById('toast-title');
-    const toastSub = document.getElementById('toast-sub');
-
-    function dispararEntrada() {
-      if (!toast || !toastTitle || !toastSub) return;
-      const num = gerarNumeroAleatorio();
-      // O grupo Até R$ 300 tem mais destaque na prova social
-      const r = Math.random();
-      const gIndex = r < 0.25 ? 0 : (r < 0.75 ? 1 : 2);
-      const grupoSorteado = gruposInfo[gIndex];
-
-      toastTitle.innerHTML = `<strong>${num}</strong> entrou no grupo`;
-      toastSub.textContent = `${grupoSorteado.nome} • há poucos instantes`;
-
-      toast.classList.add('show');
-      playPopupSound();
-
-      setTimeout(() => {
-        toast.classList.remove('show');
-        const pausa = Math.floor(Math.random() * 1200) + 2600;
-        setTimeout(dispararEntrada, pausa);
-      }, 3500);
+    function aceitarCookies() {
+      localStorage.setItem('vrioso_cookie_consent', 'true');
+      const b = document.getElementById('cookie-banner');
+      if (b) b.style.display = 'none';
     }
 
-    setTimeout(dispararEntrada, 1000);
+    setTimeout(checarCookies, 1200);
 
     // 4. CATÁLOGO COM AS NOVAS ETIQUETAS LIMPAS
     const catalogoProdutos = [
